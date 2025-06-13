@@ -17,7 +17,7 @@ def main():
         result = process_image(uploaded)
         
         # Display the uploaded image
-        st.image(result['image'], caption="Uploaded Image", use_column_width=True)
+        st.image(result['image'], caption="Uploaded Image", use_container_width=True)
         
         # Show transparency statistics
         st.markdown(
@@ -30,7 +30,7 @@ def main():
             st.success("This image HAS transparency!")
             if st.checkbox("Show transparent area mask?"):
                 mask_img = show_transparent_mask(result['alpha'])
-                st.image(mask_img, caption="Transparent Pixels Highlighted (Red)", use_column_width=True)
+                st.image(mask_img, caption="Transparent Pixels Highlighted (Red)", use_container_width=True)
         else:
             st.info("This image does NOT have transparency.")
 
